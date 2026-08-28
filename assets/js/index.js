@@ -38,13 +38,17 @@ const getComputerChoice = () => {
   return choices[randomIndex];
 };
 
+//now we need to update the scores in the html
 const updateScores = () => {
-  userEl.textContent = `User Score: ${userScore}`;
-  compEl.textContent = `Computer Score: ${computerScore}`;
+  userEl.textContent = `${userScore}`;
+  compEl.textContent = `${computerScore}`;
 };
 
+// now a function that will play the game
 const playRound = (userChoice) => {
   const computerChoice = getComputerChoice();
+  //instead of writing all the possible combinations for a draw, i will simply check if the
+  // user choice is the same as the computer choice
   if (computerChoice === userChoice) {
     result.textContent = `It's a tie! You both chose ${userChoice}.`;
   } else if (
@@ -73,3 +77,11 @@ paper.addEventListener("click", function () {
 scissors.addEventListener("click", function () {
   playRound("scissors");
 });
+
+const updateCopyright = () => {
+  const year = new Date().getFullYear();
+  document.querySelector(".copyright").innerHTML =
+    `&copy; ${year} Rock Paper Scissors • Built by Momoh Sawi`;
+};
+
+updateCopyright();

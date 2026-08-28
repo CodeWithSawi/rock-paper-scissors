@@ -18,9 +18,16 @@
       <p class="results" id="result">blank for now</p>
       <p class="scores">
         Your score: <span id="user">4</span> Computer score:
-        <spam id="computer">1</spam>
+        <span id="computer">1</span>
       </p>
+      <p class="copyright"></p>
     </div>
     <script src="assets/js/index.js"></script>
+    <script>
+      const date = new Date();
+      const year = date.getFullYear();
+      document.querySelector(".copyright").innerHTML =
+        `&copy; ${year} Rock Paper Scissors Game. Developed by Momoh Sawi`;
+    </script>
   </body>
 </html>
