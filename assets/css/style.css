@@ -71,3 +71,9 @@ body {
 #computer {
   color: #f5576c;
 }
+
+.copyright {
+  margin-top: 25px;
+  font-size: 14px;
+  color: #888;
+}
