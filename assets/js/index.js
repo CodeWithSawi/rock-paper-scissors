@@ -40,5 +40,15 @@ const playRound = () => {
   const computerChoice = getComputerChoice();
   if (computerChoice === userChoice) {
     result.textContent = `It's a tie! You both chose ${userChoice}.`;
+  } else if (
+    (userChoice === "rock" && computerChoice === "scissors") ||
+    (userChoice === "paper" && computerChoice === "rock") ||
+    (userChoice === "scissors" && computerChoice === "paper")
+  ) {
+    userScore++;
+    result.textContent = `You win! ${userChoice} beats ${computerChoice}.`;
+  } else {
+    computerScore++;
+    result.textContent = `You lose! ${computerChoice} beats ${userChoice}.`;
   }
 };
